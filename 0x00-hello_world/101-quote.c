@@ -2,7 +2,7 @@
 
 /**
  * main - prints a string without usinf any funcions listed in NAME sec
- * 	of the man(3) printf or man(3) puts
+ *	of the man(3) printf or man(3) puts
  * Return: 1
  */
 int main(void)
