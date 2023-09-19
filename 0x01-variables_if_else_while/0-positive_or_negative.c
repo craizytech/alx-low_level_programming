@@ -1,8 +1,12 @@
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
+#include <stdio.h>
 
-/* betty style doc for function main goes there */
+/**
+ * main - prints the sign of a number
+ *
+ * Return: 0 if success
+ */
 int main(void)
 {
 	int n;
