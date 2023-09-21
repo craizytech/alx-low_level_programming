@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * prints_times_table - prints timestable of n
+ * print_times_table - prints timestable of n
  * @n: the number to be checked
  */
 void print_times_table(int n)
