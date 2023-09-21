@@ -8,11 +8,9 @@
  */
 int main(void)
 {
-	int i, j, k;
+	int i, num1, num2;
 
-	for (i = 0; i <= 50; i++)
-	{
-		printf("1, ");
-		printf("2, ");
-		num1 = 1;
-		num2 = 2;
+	num1 = 1;
+	num2 = 2;
+
+	for (i = 0; i < 1024; i++)
