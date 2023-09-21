@@ -13,4 +13,6 @@ int main(void)
 	for (i = 0; i <= 50; i++)
 	{
 		printf("1, ");
-		printf("2, ")
+		printf("2, ");
+		num1 = 1;
+		num2 = 2;
