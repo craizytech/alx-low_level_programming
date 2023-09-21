@@ -30,7 +30,30 @@ void print_times_table(int n)
 					_putchar(((k / 10) % 10) + '0');
 					_putchar((k % 10) + '0');
 				}
-				_putchar('\n');
+				if (j == n)
+					break;
+				if (k <= 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					if (i * (j + 1) > 9)
+						continue;
+					_putchar(' ');
+				}
+				else if (k > 9 && k < 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					if (i * (j + 1) > 99)
+						continue;
+					_putchar(' ');
+				}
+				else
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 			}
 		}
 	}
