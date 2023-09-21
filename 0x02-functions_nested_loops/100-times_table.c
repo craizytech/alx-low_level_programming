@@ -4,7 +4,7 @@
  * prints_times_table - prints timestable of n
  * @n: the number to be checked
  */
-void prints_times_table(int n)
+void print_times_table(int n)
 {
 	int i, j, k;
 
