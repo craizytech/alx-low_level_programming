@@ -1,61 +1,17 @@
 #include "main.h"
 
 /**
- * print_times_table - prints the times table of a number n
- * @n: the num
- *
+ * prints_times_table - prints timestable of n
+ * @n: the number to be checked
  */
-void print_times_table(int n)
+void prints_times_table(int n)
 {
-	int i, j, k;
+	int num;
+	int mult;
+	int prod;
 
-	if (n >= 0 && n <= 15)
+	if (n >= 0; && n <= 15)
 	{
-		for (i = 0; i <= n; i++)
+		for (num = 0; num <= n; num++)
 		{
-			for (j = 0; j <= n; j++)
-			{
-				k = i * j;
-
-				if (k < 10)
-					_putchar(k + '0');
-				else if (k > 9 && k < 100)
-				{
-					_putchar((k / 10) + '0');
-					_putchar((k % 10) + '0');
-				}
-				else
-				{
-					_putchar((k / 100) + '0');
-					_putchar(((k / 10) % 10) + '0');
-					_putchar((k % 10) + '0');
-				}
-				if (j == n)
-					break;
-				if (k <= 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					if (i * (j + 1) > 9)
-						continue;
-					_putchar(' ');
-				}
-				else if (k > 9 && k < 100)
-				{
-					_putchar(',');
-					_putchar(' ');
-					if (i * (j + 1) > 99)
-						continue;
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-			}
-			_putchar('\n');
-		}
-	}
-}
+			_putchar('0');
