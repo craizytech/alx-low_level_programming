@@ -31,4 +31,5 @@ void print_to_98(int n)
 	}
 	else
 		printf("98");
+	printf("\n");
 }
