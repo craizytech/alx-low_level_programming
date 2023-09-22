@@ -8,10 +8,11 @@
  */
 int main(void)
 {
-	int i, num1, num2, num3;
+	long int i, num1, num2, num3;
 
 	num1 = 1;
 	num2 = 2;
+	printf("%d, %d, ", num1, num2);
 
 	for (i = 0; i < 50; i++)
 	{
