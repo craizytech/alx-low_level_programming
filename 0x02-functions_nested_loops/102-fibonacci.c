@@ -14,13 +14,13 @@ int main(void)
 	num2 = 2;
 	printf("%ld, %ld, ", num1, num2);
 
-	for (i = 0; i < 49; i++)
+	for (i = 0; i < 48; i++)
 	{
 		num3 = num1 + num2;
 		num1 = num2;
 		num2 = num3;
 		printf("%ld", num3);
-		if (i < 48)
+		if (i < 47)
 			printf(", ");
 	}
 	return (0);
