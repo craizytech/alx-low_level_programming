@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	long long int num1, num2, num3, i;
+	long int num1, num2, num3, i;
 
 	num1 = 1;
 	num2 = 2;
@@ -17,7 +17,7 @@ int main(void)
 	for (i = 0; i < 48; i++)
 	{
 		num3 = num1 + num2;
-		printf("%lld", num3);
+		printf("%ld", num3);
 
 		num1 = num2;
 		num2 = num3;
