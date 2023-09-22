@@ -19,7 +19,7 @@ int main(void)
 		num3 = num1 + num2;
 		num1 = num2;
 		num2 = num3;
-		printf("%d", num3);
+		printf("%ld", num3);
 		if (i < 50)
 			printf(", ");
 	}
