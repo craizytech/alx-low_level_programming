@@ -19,6 +19,8 @@ int main(void)
 		num1 = num2;
 		num2 = num3;
 	}
+	printf("%d", num3);
 	if (i < 50)
 		printf(", ");
+	return (0);
 }
