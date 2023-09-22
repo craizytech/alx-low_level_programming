@@ -19,7 +19,6 @@ int main(void)
 		num1 = num2;
 		num2 = num3;
 	}
-	if (i > 50)
-		continue;
-	printf(", ");
+	if (i < 50)
+		printf(", ");
 }
