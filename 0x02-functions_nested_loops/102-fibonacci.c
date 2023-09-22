@@ -14,3 +14,12 @@ int main(void)
 	num2 = 2;
 
 	for (i = 0; i < 1024; i++)
+	{
+		num3 = num1 + num2;
+		num1 = num2;
+		num2 = num3;
+	}
+	if (i > 50)
+		break;
+	printf(", ");
+}
