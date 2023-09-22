@@ -20,6 +20,6 @@ int main(void)
 		num2 = num3;
 	}
 	if (i > 50)
-		break;
+		continue;
 	printf(", ");
 }
