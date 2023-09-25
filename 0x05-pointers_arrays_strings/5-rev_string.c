@@ -11,6 +11,7 @@ void rev_string(char *s)
 	while (*(s + i) != '\0')
 	{
 		i++;
+		_putchar(i);
 	}
 
 	while (i >= 0)
