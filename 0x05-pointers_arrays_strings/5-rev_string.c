@@ -12,7 +12,7 @@ void rev_string(char *s)
 		i++;
 	while (i >= 0)
 	{
-		_putchar(*(str + i));
+		_putchar(*(s + i));
 		i--;
 	}
 }
