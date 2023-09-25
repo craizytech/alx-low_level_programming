@@ -10,6 +10,9 @@ void rev_string(char *s)
 
 	while (*(s + i) != '\0')
 		i++;
-	char tmp[i];
-	while (*(s + i) != '\0')
-		*(tmp + i) = *(s + i);
+	while (i >= 0)
+	{
+		_putchar(*(str + i));
+		i--;
+	}
+}
