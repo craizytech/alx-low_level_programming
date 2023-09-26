@@ -12,7 +12,7 @@ int _atoi(char *s)
 	int j = 0;
 	int num = 0;
 	int sum = 0;
-
+i
 	while (s[i])
 		i++;
 	i--;
