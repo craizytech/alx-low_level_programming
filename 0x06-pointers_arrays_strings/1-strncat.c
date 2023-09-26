@@ -1,0 +1,16 @@
+#include "main.h"
+
+/**
+ * _strncat - concatenates two strings
+ * @dest: destination
+ * @src: source
+ * @n: numbers
+ *
+ * Return: character pointers
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+	int i = 0;
+	
+	while (dest[i])
+		i++;
