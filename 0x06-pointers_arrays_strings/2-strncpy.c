@@ -3,7 +3,7 @@
 /**
  * _strncpy - function that copies a string
  * @dest: destination
- * @str: source
+ * @src: source
  * @n: number of bytes to be printed
  */
 char *_strncpy(char *dest, char *src, int n)
