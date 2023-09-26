@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 
 /**
  * function revereses a string
@@ -8,7 +8,7 @@ void rev_string(char *s)
 {
 	int i, y, tmp;
 
-	while (*(str + i))
+	while (*(s + i))
 		i++;
 	i -= i;
 
