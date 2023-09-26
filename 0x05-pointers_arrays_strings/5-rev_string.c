@@ -20,6 +20,7 @@ void rev_string(char *s)
 			s[i] = s[y];
 			s[y] = tmp;
 			i--;
+			continue;
 		}
 	}
 }
