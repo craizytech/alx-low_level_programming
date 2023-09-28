@@ -15,7 +15,7 @@ void print_diagsums(int *a, int size)
 	for (i = 0; i < size; i++)
 	{
 		prim += a[i * size + i];
-		sec += a[i * size + (size - i - 1)];
+		sec += a[i * size + (size - 1 - i)];
 	}
 	printf("%d, %d", prim, sec);
 }
