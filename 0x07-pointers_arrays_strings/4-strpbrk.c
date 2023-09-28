@@ -3,7 +3,7 @@
 /**
  * _strpbrk - searhes the string for any set of bytes
  * @s: string that we check the occurences of accept
- * @accept: string 
+ * @accept: string
  *
  * Return: pointer to the first occurence of  a character
  */
@@ -18,7 +18,7 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (s[i] == accept[j])
 			{
-				return &s[i];
+				return (&s[i]);
 			}
 		}
 	}
