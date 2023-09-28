@@ -14,7 +14,7 @@ char *_strpbrk(char *s, char *accept)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; accept[j] != '\0'; i++)
+		for (j = 0; accept[j] != '\0'; j++)
 		{
 			if (s[i] == accept[j])
 			{
@@ -22,5 +22,5 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
-	return (NULL);
+	return ('\0');
 }
