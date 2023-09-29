@@ -4,7 +4,7 @@
 /**
  * print_diagsums - prints the sum of the 2 diagonals in a matrix
  * @a: the matrix(2d or 3d )
- * @size: size 
+ * @size: size
  */
 void print_diagsums(int *a, int size)
 {
@@ -15,7 +15,6 @@ void print_diagsums(int *a, int size)
 		sum1 += a[index];
 		a += size;
 	}
-	a -= size;
 
 	for (index = 0; index < size; index++)
 	{
