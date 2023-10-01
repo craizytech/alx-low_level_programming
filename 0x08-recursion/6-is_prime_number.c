@@ -26,7 +26,7 @@ int is_prime_number(int n)
  */
 int is_div(n, div)
 {
-	if ((div * div) > n)
+	if ((div *div) > n)
 		return (1);
 	if (n % div == 0)
 		return (0);
