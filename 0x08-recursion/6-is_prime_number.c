@@ -1,6 +1,6 @@
 #include "main.h"
 
-int is_div(n, div);
+int is_div(int n,int div);
 /**
  * is_prime_number - function that checks if n is a prime number
  * @n: the number
@@ -24,7 +24,7 @@ int is_prime_number(int n)
  * Return: 1 if it checks to the sqrt and it doesnt find a divisor
  * 0 if it finds a divisor meaning n is not a prime number
  */
-int is_div(n, div)
+int is_div(int n,int div)
 {
 	if ((div *div) > n)
 		return (1);
