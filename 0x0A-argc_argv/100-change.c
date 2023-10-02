@@ -11,10 +11,17 @@
 int main(int argc, char *argv[])
 {
 	int num = 0;
-	int total = atoi(argv[1]);
+
+	if (arg != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
 
 	if (argc == 2)
 	{
+		int total = atoi(argv[1]);
+
 		while (total >= 25)
 		{
 			total -= 25;
@@ -40,13 +47,7 @@ int main(int argc, char *argv[])
 			total -= 1;
 			num++;
 		}
-		printf("%d\n", num);
 	}
-	else if (argc == 1 || argc > 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	else if (atoi(argv[1]) < 0)
-		printf("0\n");
+	printf("%d\n", num);
+	return (0)
 }
