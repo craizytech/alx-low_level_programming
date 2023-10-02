@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
 			total -= 1;
 			num++;
 		}
+		printf("%d\n", num);
 	}
 	else if (argc == 1 || argc > 2)
 	{
