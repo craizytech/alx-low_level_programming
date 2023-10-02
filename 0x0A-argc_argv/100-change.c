@@ -10,7 +10,6 @@
  */
 int main(int argc, char *argv[])
 {
-	int num, total;
 	int num = 0;
 	int total = atoi(argv[1]);
 
