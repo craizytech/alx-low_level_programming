@@ -22,8 +22,18 @@ char *_strdup(char *str)
 	{
 		return ('\0');
 	}
-	for (j = 0; j < i; j++)
-		*(p + j) = *(str + j);
+	else
+	{
+		for (j = 0; j < i; j++)
+		{
+			if (p != NULL)
+				*(p + j) = *(str + j);
+			else
+			{
+				return ('\0');
+			}
+		return (p);
+	}
 	free(p);
-	return (p);
+	return ('\0');
 }
