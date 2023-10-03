@@ -33,6 +33,7 @@ char *_strdup(char *str)
 				return ('\0');
 			}
 		return (p);
+		}
 	}
 	free(p);
 	return ('\0');
