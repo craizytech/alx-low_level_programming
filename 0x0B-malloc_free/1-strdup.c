@@ -5,7 +5,7 @@
  * _strdup - returns a pointer to a newly allocated space in memory
  * which contains a copy of the string
  * @str: pointer to string
- * 
+ *
  * Return: pointer to newly created array
  */
 char *_strdup(char *str)
@@ -19,7 +19,7 @@ char *_strdup(char *str)
 
 	p = malloc(sizeof(char) * i);
 	if (p == NULL)
-		return '\0';
+		return ('\0');
 
 	for (j = 0; j <= i; j++)
 		*(p + j) = *(str + j);
