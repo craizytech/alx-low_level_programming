@@ -26,3 +26,4 @@ char *_strdup(char *str)
 		*(p + j) = *(str + j);
 	free(p);
 	return (p);
+}
