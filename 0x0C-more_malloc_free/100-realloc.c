@@ -14,4 +14,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	unsigned int i;
 	int *p;
 
+	for (i = 0; i < old_size; i++)
+		free(ptr[i]);
+	free(ptr);
+
+	p = malloc(new_size);
+	
+	return (p);
+}
 
