@@ -23,6 +23,8 @@ void print_dog(struct dog *d);
  * @name: name of the dog
  * @age: age of the dog
  * @owner: name of the dog owner
+ *
+ * Description: defining a structure using typedef
  */
 typedef struct
 {
