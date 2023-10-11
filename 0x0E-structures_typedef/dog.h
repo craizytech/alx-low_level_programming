@@ -26,10 +26,8 @@ void print_dog(struct dog *d);
  *
  * Description: defining a structure using typedef
  */
-typedef struct
-{
-	char *name;
-	float age;
-	char *owner;
-} dog_t;
+/**
+ * dog_t - typedef fr the struct dog
+ */
+typedef struct dog dog_t;
 #endif
