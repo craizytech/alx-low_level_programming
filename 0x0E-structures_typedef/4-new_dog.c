@@ -14,6 +14,7 @@ char *_strcopy(char *dest, char *src);
 int _strlen(char *str)
 {
 	int len = 0;
+
 	while (str)
 		len++;
 	return (len);
@@ -30,7 +31,7 @@ char *_strcopy(char *src, char *dest)
 {
 	int i = 0;
 
-	while(src[i])
+	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;
