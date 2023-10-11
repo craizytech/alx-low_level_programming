@@ -18,14 +18,7 @@ struct dog
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
-/**
- * struct dog dog_t - contains info about a dog using typedef
- * @name: name of the dog
- * @age: age of the dog
- * @owner: name of the dog owner
- *
- * Description: defining a structure using typedef
- */
+
 /**
  * dog_t - typedef fr the struct dog
  */
