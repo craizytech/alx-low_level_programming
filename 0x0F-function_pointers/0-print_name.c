@@ -8,11 +8,14 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	void print(*name)
-	{
-		printf("%s\n", name);
-	}
-	f = print;
-
 	f(name);
+}
+
+/**
+ * print - prints the name
+ * @name: name
+ */
+void print(char *name)
+{
+	print("%s\n", name);
 }
