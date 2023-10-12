@@ -10,12 +10,3 @@ void print_name(char *name, void (*f)(char *))
 {
 	f(name);
 }
-
-/**
- * print - prints the name
- * @name: name
- */
-void print(char *name)
-{
-	print("%s\n", name);
-}
