@@ -2,20 +2,21 @@
 #include <stdlib.h>
 
 /**
- * get_op_func - selects correct function to perform users operation
- * @s: s is the operator passed as an argument to the program
- * @a: first arg
- * @b: 2nd arg
- * Return: pointer to the func that corresponds to the operator else NULL
+ * get_op_func - Selects the correct function to perform
+ *               the operation asked by the user.
+ * @s: The operator passed as argument.
+ *
+ * Return: A pointer to the function corresponding
+ *         to the operator given as a parameter.
  */
-int (*get_op_func(char *s))(int a, int b)
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
 		{"*", op_mul},
 		{"/", op_div},
-		{"%", op_div},
+		{"%", op_mod},
 		{NULL, NULL}
 	};
 	int i = 0;
