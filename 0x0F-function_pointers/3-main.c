@@ -10,29 +10,32 @@
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	char *operator;
-	int arg1 = atoi(argv[1]);
-	int arg2 = atoi(argv[3]);
-
-	operator = argv[2];
+	int num1, int num2;
+	char *op;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit (98);
-	}
-	if (get_op_func(operator) == NULL)
-	{
-		printf("Error\n");
-		exit (99);
-	}
-	if ((operator == "/" || operator == "%") && arg2 == 0)
-	{
-		printf("Error\n");
-		exit (100);
+		exit(98);
 	}
 
-	printf("%d\n", get_op_func(operator)(arg1, arg2));
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+	op = argv[2];
+
+	if (get_op_func(op) == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	if ((*op == '/' || *op == '*') && num2 == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	printf("%d\n", get_op_func(op)(num1, num2));
 
 	return (0);
 }
