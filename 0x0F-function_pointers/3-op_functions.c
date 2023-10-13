@@ -50,4 +50,7 @@ int op_div(int a, int b)
  * @b: no 2
  * Return: result of division
  */
-int op_mod(int a
+int op_mod(int a, int b)
+{
+	return (a % b);
+}
