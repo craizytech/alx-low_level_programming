@@ -1,16 +1,14 @@
 #include "function_pointers.h"
 
 /**
- * int_index - function that searches for an integer in an array
- * @array: array of integers that may contain the needed number
- * @size: number of elements in the arrray
- * @cmp: function that compares the values
- *
- * Return: index of the 1st el else returns 0 else return -1 if size<=0
+ * int_index - searches for an integer
+ * @array: array of numbers
+ * @size: number of elements in the array
+ * @cmp: function that compares values
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i;
+	int i = 0;
 
 	if (array == NULL || cmp == NULL)
 		return (-1);
