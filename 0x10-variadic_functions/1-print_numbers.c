@@ -1,5 +1,4 @@
-#include "variadic_pointers"
-#include <stdarg.h>
+#include "variadic_pointers.h"
 
 /**
  * print_numbers - prints numbers followed by a new line
