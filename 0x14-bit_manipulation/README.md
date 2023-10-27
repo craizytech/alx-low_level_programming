@@ -1,1 +1,1 @@
-taking my vengence on binaries
+bit manipulation
