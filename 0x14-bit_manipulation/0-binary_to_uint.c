@@ -10,17 +10,20 @@ unsigned int binary_to_uint(const char *b)
 
 	while(b[len] != '\0')
 		len++;
-
-	for (index = 0; index < len; index++)
+	if (len <= 8)
 	{
-		if (b[index] != '0' && b[index] != '1')
-			return (0);
-
-		if (b[index] == '1')
+		for (index = 0; index < len; index++)
 		{
-			for (factor = index; factor < len - 1; factor++)
-				sum = (sum << 1) | 1;
+			if (b[index] != '0' && b[index] != '1')
+				return (0);
+
+			if (b[index] == '1')
+			{
+				for (factor = index; factor < len - 1; factor++)
+					sum = (sum << 1) | 1;
+			}
 		}
+
+		return (sum);
 	}
-	return (sum);
 }
