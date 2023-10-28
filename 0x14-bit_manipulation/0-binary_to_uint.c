@@ -1,24 +1,22 @@
 #include "main.h"
 
-unsigen int binary_to_uint(const char *b)
+unsigned int binary_to_uint(const char *b)
 {
-	int len = 0, index, factor;
-	unsigned int sum = 1;
+	int len = 0, index, factor = 1;
+	unsigned int sum = 0;
 
 	if (b == NULL)
 		return (0);
 
-	while (b[len] != '\0')
-	{
-		if (b[len] != '0' || b[len] != '1')
-			return (0);
-		len++;
-	}
+	len = strlen(b);
 
 	for (index = len - 1 ; index >= 0; index--)
 	{
-		if (b[index] = '1')
-			sum = (b[index] - '0') * factor;
+		if (b[index] != '0' && b[index] != '1')
+			return (0);
+
+		if (b[index] == '1')
+			sum += factor;
 		factor *= 2;
 	}
 	return (sum);
