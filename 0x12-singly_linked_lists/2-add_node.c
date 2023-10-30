@@ -10,7 +10,9 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	/* create a new node and allocate memory */
+
 	list_t *node;
+
 	node = malloc(sizeof(list_t));
 
 	/* guard clause if result of malloc is null */
