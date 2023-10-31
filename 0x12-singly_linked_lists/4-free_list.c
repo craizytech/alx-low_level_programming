@@ -7,7 +7,7 @@
 
 void free_list(list_t *head)
 {
-	list *ptr;
+	list_t *ptr;
 
 	ptr = head;
 
