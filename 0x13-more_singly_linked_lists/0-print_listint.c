@@ -9,7 +9,7 @@
 
 size_t print_listint(const listint_t *h)
 {
-	listint_t *ptr;
+	const listint_t *ptr;
 	int count  = 0;
 	
 	ptr = h;
@@ -21,4 +21,3 @@ size_t print_listint(const listint_t *h)
 	}
 	return (count);
 }
-
