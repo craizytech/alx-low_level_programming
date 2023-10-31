@@ -26,7 +26,11 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	}
 	/* loop through the list until the you get to the last element */
 	while (ptr->next)
+	{
 		ptr = ptr->next;
+	}
+
 	ptr->next = node;
+
 	return (node);
 }
