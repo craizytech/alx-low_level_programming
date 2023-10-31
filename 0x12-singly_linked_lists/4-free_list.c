@@ -19,7 +19,7 @@ void free_list(list_t *head)
 	 * frees ptr and also frees the str pointer
 	 * This loops through the list until the list is empty
 	 */
-	while(head)
+	while (head)
 	{
 		ptr = head;
 		head = head->next;
