@@ -39,7 +39,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 
 	/* set the next pointer of the new node to the next element */
-	new->next = tmp->next;
+	node->next = tmp->next;
 	tmp->next = node;
 
 	return (node);
