@@ -11,23 +11,36 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	/* create a tmp pointer to be used to traverse the list and a new node */
-	unsigned int count;
-	listint_t *tmp, *node;
+	unsigned int node;
+	listint_t *new, *copy = *head;
 
 	/* assign memory to the the new node and insert the data */
-	node = malloc(sizeof(listint_t));
-	tmp = *head;
-	node->n = n;
+	new = malloc(sizeof(listint_t));
+	if (new  == NULL)
+		return (NULL);
+
+	new->n = n;
+
+	/* Check if the node is empty then insert the newnode */
+	if (idx == 0)
+	{
+		new->next = copy;
+		*head = new;
+		return (new);
+	}
 
 	/* using a for loop loop through the list until the idx-1 element */
-	for (count = 0; count < idx; count++)
-		tmp = tmp->next;
+	for (node = 0; node < (idx - 1); node++)
+	{
+		if (copy == NULL || copy->next == NULL)
+			return (NULL);
+
+		copy = copy->next;
+	}
 
 	/* set the next pointer of the new node to the next element */
-	node->next = tmp;
+	new->next = copy->next;
+	copy->next = new;
 
-	/* set the next pointer of the idx-1 element to the new node */
-	tmp = node;
-
-	return (node);
+	return (new);
 }
