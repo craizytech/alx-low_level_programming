@@ -10,26 +10,22 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	//creating the new and copy pointer and also the index variable
 	listint_t *new, *copy;
 	unsigned int index;
 
-	//assign memory and data to the created nodes
 	new = malloc(sizeof(listint_t));
 	copy = *head;
-	new->n = n;
 
-	//check if malloc op was a success or whether the list is empty
 	if (new == NULL)
 		return (NULL);
+	new->n = n;
 	
-	if (copy == NULL)
+	if (*head == NULL)
 	{
 		*head = new;
 		return (new);
 	}
 
-	//Loop through the list until nth-1 node(node just before the index)
 	for (index = 0; index < (idx -1); index++)
 	{
 		if (copy == NULL || copy->next == NULL)
@@ -38,7 +34,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		copy = copy->next;
 	}
 
-	//now copy is at the index just before the required index
 	new->next = copy->next;
 	copy->next = new;
 
