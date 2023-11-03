@@ -1,46 +1,46 @@
 #include "lists.h"
 
 /**
- * insert_nodeint_at_index - inserts a new node at a given position in the list
- * @head: double pointer to the first element in the list
- * @idx: location to insert the new element
- * @n: the new number to be added to the list
+ * insert_nodeint_at_index - inserts a new node at a given position
+ * @head: start node
+ * @idx: index where the new node should be inserted
+ * @n: the numner to be inserted into the new node
  *
- * Return: the address of the new node or NULL if the operation fails
+ * Return: address of the new node or null if it fails
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	/* create a tmp pointer to be used to traverse the list and a new node */
-	unsigned int count;
-	listint_t *node, *tmp = *head;
+	//creating the new and copy pointer and also the index variable
+	listint_t *new, *copy;
+	unsigned int index;
 
-	/* assign memory to the the new node and insert the data */
-	node = malloc(sizeof(listint_t));
-	if (node  == NULL)
+	//assign memory and data to the created nodes
+	new = malloc(sizeof(listint_t));
+	copy = *head;
+	new->n = n;
+
+	//check if malloc op was a success or whether the list is empty
+	if (new == NULL)
 		return (NULL);
-
-	node->n = n;
-
-	/* Check if the list is empty then insert the newnode */
-	if (idx == 0)
+	
+	if (copy == NULL)
 	{
-		node->next = tmp;
-		*head = node;
-		return (node);
+		*head = new;
+		return (new);
 	}
 
-	/* using a for loop loop through the list until the idx-1 element */
-	for (count = 0; count < (idx - 1); count++)
+	//Loop through the list until nth-1 node(node just before the index)
+	for (index = 0; index < (idx -1); index++)
 	{
-		if (tmp == NULL || tmp->next == NULL)
+		if (copy == NULL || copy->next == NULL)
 			return (NULL);
 
-		tmp = tmp->next;
+		copy = copy->next;
 	}
 
-	/* set the next pointer of the new node to the next element */
-	node->next = tmp->next;
-	tmp->next = node;
+	//now copy is at the index just before the required index
+	new->next = copy->next;
+	copy->next = new;
 
-	return (node);
+	return (new);
 }
