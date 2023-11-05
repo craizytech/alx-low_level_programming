@@ -1,4 +1,4 @@
-#include "lists"
+#include "lists.h"
 
 /**
  * print_listint_safe - prints a linked list
@@ -9,7 +9,7 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	int count = 0;
-	listint_t *copy = head;
+	const listint_t *copy = head;
 
 	if (!head)
 		return (count);
