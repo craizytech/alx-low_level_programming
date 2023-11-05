@@ -9,13 +9,9 @@
 listint_t *reverse_listint(listint_t **head)
 {
 	/* create three pointers used to traverse/loop/reverse the list */
-	listint_t *current;
-	listint_t *prev;
+	listint_t *current = *head;
+	listint_t *prev = NULL;
 	listint_t *next;
-
-	/* assign the values to the created pointers */
-	current = *head;
-	prev = NULL;
 
 	/* loop to reverse the linked list */
 	while (current)
