@@ -17,7 +17,7 @@ size_t print_listint_safe(const listint_t *head)
 	do
 	{
 		count++;
-		printf("%d\n", copy->next);
+		printf("%d\n", copy->n);
 		copy = copy->next;
 	}while (copy && copy != head);
 
