@@ -17,8 +17,12 @@ size_t print_listint_safe(const listint_t *head)
 	do
 	{
 		count++;
+		printf("%d\n", copy->next);
 		copy = copy->next;
 	}while (copy && copy != head);
+
+	if (copy != head)
+		exit(98);
 
 	return (count);
 }
