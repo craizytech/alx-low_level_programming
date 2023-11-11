@@ -26,16 +26,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	/* allocate memory for the buffer */
 	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+		return (0);
 
 	/* read the contents of the file to a tmp buffer */
 	output = read(fd, buffer, letters);
-
-	if (output == -1)
-	{
-		free(buffer);
-		close(fd);
-		return (0);
-	}
 
 	/* write to starndard output */
 	num = write(1, buffer, output);
