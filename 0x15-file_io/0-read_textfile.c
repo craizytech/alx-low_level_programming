@@ -19,7 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	/* open the file using open sys call */
-	fd = open(filename, O_RDONLY, 0777);
+	fd = open(filename, O_RDONLY);
 
 	/* check of the file was opened successfully */
 	if (fd == -1)
@@ -33,7 +33,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	output = read(fd, buffer, letters);
 
 	/* write to starndard output */
-	num = write(1, buffer, output);
+	num = write(STDOUT_FILENO, buffer, output);
 	if (num == -1)
 		return (0);
 
