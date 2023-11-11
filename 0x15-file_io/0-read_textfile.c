@@ -11,7 +11,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
+	int fd, num;
 	size_t output;
 	char *buffer;
 
@@ -35,7 +35,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	/* write to starndard output */
-	write(1, buffer, output);
+	num = write(1, buffer, output);
+	if (num == -1)
+		return (0);
 
 	free(buffer);
 	return (output);
