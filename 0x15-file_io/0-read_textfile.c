@@ -11,32 +11,27 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, num;
-	size_t output;
+	ssize_t o, r, w;
 	char *buffer;
 
+	/* check to ensure filename is not null */
 	if (filename == NULL)
 		return (0);
-
-	/* open the file using open sys call */
-	fd = open(filename, O_RDONLY);
-
-	/* check of the file was opened successfully */
-	if (fd == -1)
-		return (0);
-	/* allocate memory for the buffer */
+	/* allocate memory to the buffer */
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 		return (0);
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
 
-	/* read the contents of the file to a tmp buffer */
-	output = read(fd, buffer, letters);
-
-	/* write to starndard output */
-	num = write(STDOUT_FILENO, buffer, output);
-	if (num == -1)
+	if (o == -1 || r == -1 || w == -1 || w != r)
+	{
+		free(buffer);
 		return (0);
-
+	}
 	free(buffer);
-	return (output);
+	close(fd);
+
+	return (w);
 }
