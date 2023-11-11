@@ -30,6 +30,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/* read the contents of the file to a tmp buffer */
 	output = read(fd, buffer, letters);
 
+	if (output == -1)
+	{
+		free(buffer);
+		close(fd);
+		return (0);
+	}
+
 	/* write to starndard output */
 	num = write(1, buffer, output);
 	if (num == -1)
