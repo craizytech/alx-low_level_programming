@@ -20,21 +20,28 @@ int main(int argc, char *argv[])
 	}
 
 	file1 = open(argv[1], O_RDONLY);
+	file2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	r = read(file1, buffer, 1024);
 
-	if (file1 == -1 || r == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	file2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	w = write(file2, buffer, r);
+	do {
+			if (file1 == -1 || r == -1)
+			{
+				dprintf(STDERR_FILENO,
+						"Error: Can't read from file %s\n", argv[1]);
+				exit(98);
+			}
+			
+			w = write(file2, buffer, r);
 
-	if (file2 == -1 || w == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+			if (file2 == -1 || w == -1)
+			{
+				dprintf(STDERR_FILENO,
+					"Error: Can't write to %s\n", argv[2]);
+				exit(99);
+			}
+			r = read(file1, buffer, 1024);
+			file2 = open(argv[2], O_WRONLY | O_APPEND);
+	} while (r > 0);
 
 	close_file(file1);
 	close_file(file2);
