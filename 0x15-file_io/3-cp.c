@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int file1, file2;
+	int file1, file2, w;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	file2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	w = (file2, file1, read(file1, buffer, 1024));
+	w = write(file2, buffer, read(file1, buffer, 1024));
 
 	if (file2 == -1 || w == -1)
 	{
