@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main"
 
 /**
  * main - copies the content of 1 file to another
@@ -7,9 +7,10 @@
  *
  * Return: 0
  */
+void close_file(int fd);
 int main(int argc, char *argv[])
 {
-	int file1, file2, w;
+	int file1, file2, w, r;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -19,13 +20,15 @@ int main(int argc, char *argv[])
 	}
 
 	file1 = open(argv[1], O_RDONLY);
-	if (file1 == -1)
+	r = read(file1, buffer, 1024);
+
+	if (file1 == -1 || r == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	file2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	w = write(file2, buffer, read(file1, buffer, 1024));
+	w = write(file2, buffer, r);
 
 	if (file2 == -1 || w == -1)
 	{
@@ -33,15 +36,22 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	if (close(file1) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file1);
-		exit(100);
-	}
-	if (close(file2) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file2);
-		exit(100);
-	}
+	close_file(file1);
+	close_file(file2);
+
 	return (0);
 }
+
+void close_file(int fd)
+{
+	int c;
+
+	c = close(fd);
+
+	if (c == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
+		exit(100);
+	}
+}
+
