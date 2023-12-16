@@ -2,6 +2,7 @@
 
 /**
  * list_len - this function returns the length of the list
+ * @h: pointer to the head element
  *
  * Return: number of elements in the list
  */
