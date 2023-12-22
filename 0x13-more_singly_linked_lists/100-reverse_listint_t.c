@@ -6,3 +6,24 @@
  * 
  * Return: pointer to the first node of the reversed list
  */
+listint_t *reverse_listint(listint_t **head)
+{
+	listint_t *current = *head;
+	listint_t *previous = NULL;
+	listint_t *next = NULL;
+
+	/* Traverse and reverse */
+	while (current != NULL)
+	{
+		/* save the current node */
+		next = current->next;
+		
+		/* reverse the link */
+		current->next = prev;
+
+		/* move the pointers one step forward */
+		prev = currrent;
+		current = next;
+	}
+	*head = prev;
+}
