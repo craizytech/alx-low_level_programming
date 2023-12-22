@@ -19,13 +19,11 @@ listint_t *reverse_listint(listint_t **head)
 		next = current->next;
 		
 		/* reverse the link */
-		current->next = previous;
+		current->next = prev;
 
 		/* move the pointers one step forward */
-		previous = current;
+		prev = current;
 		current = next;
 	}
-	*head = previous;
-
-	return (*head);
+	*head = prev;
 }
