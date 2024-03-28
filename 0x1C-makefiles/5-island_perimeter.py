@@ -19,10 +19,10 @@ def island_perimeter(grid):
         for j in range(columns):
             if grid[i][j] == 1:
                 perimeter += 4
-            #check if the cell below is a land cell the -2
+            # check if the cell below is a land cell the -2
             if i < rows - 1 and grid[i+1][j] == 1:
                 perimeter -= 2
-            #check if the cell to the right is a land cell
+            # check if the cell to the right is a land cell
             if j < columns - 1 and grid[i][j+1] == 1:
                 perimeter -= 2
     return perimeter
